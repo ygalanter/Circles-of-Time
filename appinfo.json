@@ -1,0 +1,36 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "yuri@galanter.net",
+    "longName": "Circles of Time",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "data/OSP-DIN.ffont",
+                "name": "OSP_DIN_REDUCED_FFONT",
+                "type": "raw"
+            },
+            {
+                "file": "images/menu.png",
+                "menuIcon": true,
+                "name": "MENU",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Circles of Time",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "45564e4b-7851-47f1-8168-707f24e62aa7",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
