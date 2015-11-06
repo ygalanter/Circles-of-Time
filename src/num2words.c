@@ -34,12 +34,12 @@ static const char* const TEENS_SPLIT[][2] = {
   {"eleven",""},
   {"twelve",""},
   {"thirteen",""},
-  {"four","teen"},
+  {"fourteen",""},
   {"fifteen",""},
   {"sixteen",""},
-  {"seven","teen"},
-  {"eight","teen"},
-  {"nine","teen"}
+  {"seventeen",""},
+  {"eighteen",""},
+  {"nineteen",""}
 };
 
 static const char* const TENS[] = {
@@ -65,6 +65,7 @@ static const char* STR_PAST = "past";
 static const char* STR_HALF = "half";
 static const char* STR_AFTER = "after";
 static const char* STR_SPACE = " ";
+static const char* STR_NEWLINE = "\n";
 
 static size_t append_number(char* words, int num) {
   int tens_val = num / 10 % 10;
@@ -80,7 +81,11 @@ static size_t append_number(char* words, int num) {
     strcat(words, TENS[tens_val]);
     len += strlen(TENS[tens_val]);
     if (ones_val > 0) {
-      strcat(words, " ");
+       #ifdef PBL_ROUND
+        strcat(words, STR_SPACE);
+      #else
+        strcat(words, STR_NEWLINE); 
+      #endif
       len += 1;
     }
   }
@@ -204,8 +209,13 @@ void minute_to_common_words(int minutes, char *words) {
   }
   if (minutes > 10 && minutes < 20) {
     strcat(words, TEENS_SPLIT[(minutes - 10) % 10][0]);
-    strcat(words, STR_SPACE);
-    strcat(words, TEENS_SPLIT[(minutes - 10) % 10][1]);
+// *** YG not splitting teen minutes    
+//     #ifdef PBL_ROUND
+//       strcat(words, STR_SPACE);
+//     #else
+//       strcat(words, STR_NEWLINE); 
+//     #endif
+//     strcat(words, TEENS_SPLIT[(minutes - 10) % 10][1]);
     return;
   }
 
@@ -213,7 +223,11 @@ void minute_to_common_words(int minutes, char *words) {
 
   int minute_ones = minutes % 10;
   if (minute_ones) {
-    strcat(words, STR_SPACE);
+    #ifdef PBL_ROUND
+      strcat(words, STR_SPACE);
+    #else
+      strcat(words, STR_NEWLINE); 
+    #endif
     strcat(words, ONES[minute_ones]);
   }
 }

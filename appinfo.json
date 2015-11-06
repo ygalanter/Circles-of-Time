@@ -4,14 +4,22 @@
         ""
     ],
     "companyName": "yuri@galanter.net",
-    "longName": "Circles of Time",
+    "longName": "Shapes of Time",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "data/OSP-DIN.ffont",
-                "name": "OSP_DIN_REDUCED_FFONT",
+                "file": "data/BigNoodleTitling.ffont",
+                "name": "BIG_NOODLE_FFONT",
+                "targetPlatforms": [
+                    "chalk"
+                ],
                 "type": "raw"
+            },
+            {
+                "file": "fonts/big_noodle_titling.ttf",
+                "name": "BIG_NOODLE_18",
+                "type": "font"
             },
             {
                 "file": "images/menu.png",
@@ -22,14 +30,14 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Circles of Time",
+    "shortName": "Shapes of Time",
     "targetPlatforms": [
         "aplite",
         "basalt",
         "chalk"
     ],
     "uuid": "45564e4b-7851-47f1-8168-707f24e62aa7",
-    "versionLabel": "1.0",
+    "versionLabel": "1.3",
     "watchapp": {
         "watchface": true
     }
